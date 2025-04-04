@@ -1,6 +1,6 @@
 'use client';
 
-import { LucideDices, Link, LucideDice1, LucideDice6, Loader } from "lucide-react";
+import { LucideDices, Link, Loader } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { CreateLink, createLinkSchema } from "@/app/schemas/"
@@ -35,8 +35,8 @@ const ShortForm = () => {
             })
 
             reset()
-        } catch (error) {
-
+        } catch {
+            toast.error('Error creating the shortend url.')
         } finally {
             setIsLoading(false)
         }
@@ -99,7 +99,3 @@ const ShortForm = () => {
 }
 
 export default ShortForm;
-
-function setValue(arg0: string, randomSlug: string) {
-    throw new Error("Function not implemented.");
-}

@@ -1,4 +1,4 @@
-import { InferType, number, object, string } from "yup";
+import { InferType, object, string } from "yup";
 
 export const createLinkSchema = object({
     url: string().min(1, 'URL is required.').url('Please enter a valid URL: https:// or http://').required(),
