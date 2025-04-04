@@ -63,7 +63,7 @@ const ShortForm = () => {
                     />
                 </div>
                 {
-                    errors.url && (<small className="text-red-500 inline-block">{errors.url.message}</small>)
+                    errors.url && (<small className="text-red-500">{errors.url.message}</small>)
                 }
             </div>
 
