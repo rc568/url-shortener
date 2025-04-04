@@ -1,14 +1,14 @@
 'use client'
 
 import { Link } from "@/app/interfaces"
-import { deleteLink } from "@/server/actions/link"
-import { LucideCopy, LucideTrash } from "lucide-react"
+// import { deleteLink } from "@/server/actions/link"
+import { LucideCopy } from "lucide-react"
 import { toast } from "sonner"
-import ShortEdit from "./ShortEdit"
+// import ShortEdit from "./ShortEdit"
 
 const ShortCard = (props: Link) => {
 
-    const { id, slug, url, visits } = props
+    const { slug, url, visits } = props
 
     const handleCopy = () => {
         const URL = `${process.env.NEXT_PUBLIC_URL}/${slug}`
@@ -20,12 +20,12 @@ const ShortCard = (props: Link) => {
         })
     }
 
-    const handleDelete = (id: number) => {
-        toast.promise(deleteLink(id), {
-            success: 'Deleted sucessfully',
-            error: 'Error deleting link',
-        })
-    }
+    // const handleDelete = (id: number) => {
+    //     toast.promise(deleteLink(id), {
+    //         success: 'Deleted sucessfully',
+    //         error: 'Error deleting link',
+    //     })
+    // }
 
     return <article className="border border-slate-200 rounded-md p-4">
         <div className="flex items-center justify-between gap-2">
@@ -37,10 +37,10 @@ const ShortCard = (props: Link) => {
                     <button className="cursor-pointer bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold p-2 rounded-md" onClick={handleCopy}>
                         <LucideCopy size={14} />
                     </button>
-                    <ShortEdit {...props} />
+                    {/* <ShortEdit {...props} />
                     <button className="cursor-pointer bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold p-2 rounded-md" onClick={() => handleDelete(id)}>
                         <LucideTrash size={14} />
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </div>
